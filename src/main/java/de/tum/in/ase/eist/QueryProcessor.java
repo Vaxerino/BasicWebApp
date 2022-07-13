@@ -32,7 +32,12 @@ public class QueryProcessor {
             }
             return "";
         } else if (query.contains("multiplied")) {
-
+            String[] numebrs = query.split(" ");
+            for (int i = 0; i < numebrs.length; i++) {
+                if (numebrs[i].equals("multiplied")){
+                    return String.valueOf(Integer.parseInt(numebrs[i-1]) * Integer.parseInt(numebrs[i+2]));
+                }
+            }
         }
         return "";
     }
